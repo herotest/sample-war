@@ -60,7 +60,7 @@ public final class Hello extends HttpServlet
 		while(inetAddresses.hasMoreElements())
 		{
 			InetAddress address = (InetAddress) inetAddresses.nextElement();
-			if (strcmp(address.getHostAddress().substring(0,6).compareTo("10.42.") == 0) 
+			if (strcmp(address.getHostAddress().substring(0,6).compareTo("10.42.") == 0)) 
 				writer.println(address.getHostAddress() + ", ");
 		}
 	}
