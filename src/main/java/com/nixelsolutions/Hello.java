@@ -61,7 +61,7 @@ public final class Hello extends HttpServlet
 		{
 			InetAddress address = (InetAddress) inetAddresses.nextElement();
 			if (address.getHostAddress().substring(0,6).compareTo("10.42.") == 0)
-				writer.println(address.getHostAddress());
+				writer.println(address.getHostAddress() + " ");
 		}
 	}
 	writer.println("</strong>");
