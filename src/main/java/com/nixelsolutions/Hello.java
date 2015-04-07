@@ -20,7 +20,7 @@ public final class Hello extends HttpServlet
     {
 
         InetAddress serverIp=null;
-	Enumeration e = NetworkInterface.getNetworkInterfaces();
+	Enumeration interfaces = NetworkInterface.getNetworkInterfaces();
         String hostname="", clientIp="", userAgent="";
         try {
             serverIp = InetAddress.getLocalHost();
@@ -53,11 +53,11 @@ public final class Hello extends HttpServlet
         writer.println("<td>");
 //        writer.println("Server IP address: <strong>" + serverIp.getHostAddress() + "</strong>");
         writer.println("Server IP addresses: <strong>");
-	while(e.hasMoreElements())
+	while(interfaces.hasMoreElements())
 	{
-		while(e.NextElement().getInetAddresses().hasMoreElements())
+		while(interfaces.NextElement().getInetAddresses().hasMoreElements())
 		{
-			writer.println(e.NextElement().getInetAddresses().nextElement().getHostAddress() + ", ");
+			writer.println(interfaces.NextElement().getInetAddresses().nextElement().getHostAddress() + ", ");
 		}
 	}
         writer.println("</td>");
