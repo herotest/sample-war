@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.net.*;
 import java.util.Enumeration;
+import java.util.Vector;
 
 public final class Hello extends HttpServlet
 {
