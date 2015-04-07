@@ -55,9 +55,12 @@ public final class Hello extends HttpServlet
         writer.println("Server IP addresses: <strong>");
 	while(interfaces.hasMoreElements())
 	{
-		while(interfaces.nextElement().getInetAddresses().hasMoreElements())
+		NetworkInterface n = (NetworkInterface) interfaces.nextElement();
+		Enumeration inetAddresses = n.getInetAddresses();
+		while(inetAddresses.hasMoreElements())
 		{
-			writer.println(interfaces.NextElement().getInetAddresses().nextElement().getHostAddress() + ", ");
+			InetAddress address = (InetAddress) inetAddresses.nextElement();
+			writer.println(address.getHostAddress() + ", ");
 		}
 	}
         writer.println("</td>");
